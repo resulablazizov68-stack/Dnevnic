@@ -1,0 +1,44 @@
+header{ 
+    background-color: rgba(0, 0, 0, 0.932);
+    color: white; 
+    width: 100%; 
+    height: 70px; 
+    display: flex; 
+    justify-content: center; 
+   
+
+}
+
+
+ul{
+      display: flex;  
+     gap: 25px; 
+     list-style-type: none;
+}  
+
+.button_shapca{ 
+    background-color: white;
+    color:black;
+    border-radius: 25px;
+    font-size: 15px;
+        box-shadow: 0 4px 10px red; 
+    height: 35px; 
+    width: 100%; 
+}
+
+.button_shapca:hover{ 
+     background-color: rgba(255, 12, 12, 0.788); 
+     color: rgb(255, 255, 255); 
+} 
+
+a{
+    text-decoration: none;
+}
+
+hr{
+    border: none; 
+    height: 3px;
+    background: rgb(233, 13, 13);  
+    margin: 0px auto; 
+    box-shadow: 0 4px 10px rgb(1, 60, 255);   
+}    
