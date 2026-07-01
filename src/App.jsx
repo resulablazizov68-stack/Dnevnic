@@ -8,12 +8,12 @@ import Zapis_del from './component/Zapis_del'
 
 function App() {
   {/*Тут зодал состояние которое будет хранить записи в масиве */}
-  const  [takes, setTakes]=useState([""]);
+  const  [takes, setTakes]=useState([]);
 
    {/*Тут реализовали функцию добавление записей */}  
 
    function addTakes(newTakes){
-     setTakes=([...takes, newTakes]);
+     setTakes([...takes, newTakes]);
    }
 
   return ( 
@@ -23,7 +23,7 @@ function App() {
       {/* Тут находиться шапка для сайта */}
        <div className='shapca_css'>
             <hr/> 
-           <header>
+           <header> 
             <ul>
                 <li><Link to="/zapis_del"><button className='button_shapca'>Запись дел</button></Link></li>
                 <li><Link to="/"><button className='button_shapca'>Главное</button></Link></li>
@@ -39,6 +39,13 @@ function App() {
         </Routes>
         </BrowserRouter>
         
+        {/* Тут реализовал нижнию шапку с названием проекта */}
+
+        <hr/>
+        <header>
+          <h1 className='zagolovok_shapci_nijnea'> Список дел</h1> 
+        </header>
+        <hr/>
     </div>
   )
 }

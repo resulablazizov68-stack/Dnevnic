@@ -21,7 +21,7 @@ function Zapis_del({addTakes}){
     addTakes(text);
 
     {/*Очистка поля ввода после отправки  */}  
-    setText();
+    setText("");
 
     navigate("/");
     

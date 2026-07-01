@@ -40,5 +40,9 @@ hr{
     height: 3px;
     background: rgb(233, 13, 13);  
     margin: 0px auto; 
-    box-shadow: 0 4px 10px rgb(1, 60, 255);   
-}    
+    box-shadow:  0 4px 10px rgb(255, 1, 1);   
+}   
+
+.zagolovok_shapci_nijnea{
+    box-shadow: 0 4px 10px red; 
+}
