@@ -1,29 +1,53 @@
-import React from 'react'
+import {useState} from 'react'
 import "./stylel/App.css"
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Glavnoe from './component/Glavnoe'
+import Istoria from './component/Istoria'
+import Zapis_del from './component/Zapis_del'
 
 
 function App() {
-  
+  {/*Тут зодал состояние которое будет хранить записи в масиве */}
+  const  [takes, setTakes]=useState([]);
 
-  return (
+   {/*Тут реализовали функцию добавление записей */}  
+
+   function addTakes(newTakes){
+     setTakes([...takes, newTakes]);
+   }
+
+  return ( 
     <div className='App_Glavnoe'>
+      <BrowserRouter>  {/* Мы обарачивае этим тегом он говорит все что находиться внутнри него управляеться через адресную строку */}
+
       {/* Тут находиться шапка для сайта */}
        <div className='shapca_css'>
             <hr/> 
-           <header>
+           <header> 
             <ul>
-                <li><a><button>Запись дел</button></a></li>
-                <li><a><button>Главное</button></a></li>
-                <li><a><button>История</button></a></li> 
+                <li><Link to="/zapis_del"><button className='button_shapca'>Запись дел</button></Link></li>
+                <li><Link to="/"><button className='button_shapca'>Главное</button></Link></li>
+                <li><Link to="/istoria"><button className='button_shapca' >История </button></Link></li>
             </ul>
            </header> 
            <hr/> 
         </div>
-        {/* Тут снизу это компаненты разных частей страниц  итд*/} 
-      <Glavnoe/> 
+        <Routes>
+          <Route  path="/" element={<Glavnoe takes={takes}/>} /> 
+          <Route  path="/zapis_del" element={<Zapis_del addTakes={addTakes}/>} /> 
+          <Route  path="/istoria" element={<Istoria/>} />
+        </Routes>
+        </BrowserRouter>
+        
+        {/* Тут реализовал нижнию шапку с названием проекта */}
+
+        <hr/>
+        <header>
+          <h1 className='zagolovok_shapci_nijnea'> Список дел</h1> 
+        </header>
+        <hr/>
     </div>
   )
 }
 
-export default App
+export default App;
